@@ -1,7 +1,7 @@
 <div align="center">
 
   <a href="https://xuannhadev.com">
-    <img src="./assets/chill-widget.svg" width="100%" alt="Animated lofi night profile of Huỳnh Xuân Nhã" />
+    <img src="./chill-widget.svg" width="100%" alt="Animated lofi night profile of Huỳnh Xuân Nhã" />
   </a>
 
   <br />
