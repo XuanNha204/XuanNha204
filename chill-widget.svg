@@ -1,0 +1,185 @@
+<svg width="900" height="480" viewBox="0 0 900 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Huỳnh Xuân Nhã — animated chill profile</title>
+  <desc id="desc">A colorful animated lofi night scene with drifting clouds, twinkling stars, city lights and a music visualizer.</desc>
+
+  <defs>
+    <linearGradient id="sky" x1="70" y1="20" x2="830" y2="460" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#11133B">
+        <animate attributeName="stop-color" values="#11133B;#25124C;#11133B" dur="12s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="0.5" stop-color="#4C1D95">
+        <animate attributeName="stop-color" values="#4C1D95;#1E3A8A;#4C1D95" dur="14s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="1" stop-color="#0E7490">
+        <animate attributeName="stop-color" values="#0E7490;#7E22CE;#0E7490" dur="16s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="glass" x1="160" y1="100" x2="650" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="white" stop-opacity="0.16" />
+      <stop offset="1" stop-color="white" stop-opacity="0.055" />
+    </linearGradient>
+
+    <linearGradient id="horizon" x1="450" y1="265" x2="450" y2="445" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F472B6" stop-opacity="0.52" />
+      <stop offset="0.52" stop-color="#7C3AED" stop-opacity="0.17" />
+      <stop offset="1" stop-color="#0B102B" stop-opacity="0" />
+    </linearGradient>
+
+    <radialGradient id="moon" cx="0" cy="0" r="1" gradientTransform="translate(741 92) rotate(118) scale(51)">
+      <stop stop-color="#FFF9C9" />
+      <stop offset="0.62" stop-color="#FDE68A" />
+      <stop offset="1" stop-color="#FBBF24" />
+    </radialGradient>
+
+    <linearGradient id="music" x1="323" y1="0" x2="577" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#22D3EE" />
+      <stop offset="0.5" stop-color="#A78BFA" />
+      <stop offset="1" stop-color="#F472B6" />
+    </linearGradient>
+
+    <filter id="shadow" x="80" y="54" width="740" height="374" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#050618" flood-opacity="0.48" />
+    </filter>
+
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="7" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <clipPath id="frame">
+      <rect width="900" height="480" rx="28" />
+    </clipPath>
+  </defs>
+
+  <style>
+    .cloud-a { animation: cloudA 22s linear infinite; }
+    .cloud-b { animation: cloudB 29s linear infinite; }
+    .float { animation: float 5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .pulse { animation: pulse 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .star-a { animation: twinkle 2.4s ease-in-out infinite; }
+    .star-b { animation: twinkle 3.4s 1.1s ease-in-out infinite; }
+    .bar-1 { animation: equalize 1.15s ease-in-out infinite alternate; transform-origin: center bottom; transform-box: fill-box; }
+    .bar-2 { animation: equalize .82s .18s ease-in-out infinite alternate; transform-origin: center bottom; transform-box: fill-box; }
+    .bar-3 { animation: equalize 1.35s .08s ease-in-out infinite alternate; transform-origin: center bottom; transform-box: fill-box; }
+    .bar-4 { animation: equalize .95s .31s ease-in-out infinite alternate; transform-origin: center bottom; transform-box: fill-box; }
+    .bar-5 { animation: equalize 1.48s .13s ease-in-out infinite alternate; transform-origin: center bottom; transform-box: fill-box; }
+    .shine { animation: shine 6s ease-in-out infinite; }
+    .light-a { animation: lights 4.7s ease-in-out infinite; }
+    .light-b { animation: lights 6.1s 1.5s ease-in-out infinite; }
+
+    @keyframes cloudA { from { transform: translateX(-170px); } to { transform: translateX(980px); } }
+    @keyframes cloudB { from { transform: translateX(920px); } to { transform: translateX(-250px); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+    @keyframes pulse { 0%, 100% { transform: scale(1); opacity: .75; } 50% { transform: scale(1.08); opacity: 1; } }
+    @keyframes twinkle { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+    @keyframes equalize { from { transform: scaleY(.3); } to { transform: scaleY(1); } }
+    @keyframes shine { 0%, 76%, 100% { opacity: 0; transform: translateX(-140px); } 86% { opacity: .42; } 96% { opacity: 0; transform: translateX(520px); } }
+    @keyframes lights { 0%, 100% { opacity: .28; } 45%, 70% { opacity: 1; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .cloud-a, .cloud-b, .float, .pulse, .star-a, .star-b,
+      .bar-1, .bar-2, .bar-3, .bar-4, .bar-5, .shine, .light-a, .light-b {
+        animation: none !important;
+      }
+    }
+  </style>
+
+  <g clip-path="url(#frame)">
+    <rect width="900" height="480" fill="url(#sky)" />
+    <ellipse cx="450" cy="366" rx="465" ry="173" fill="url(#horizon)" />
+
+    <!-- soft aurora ribbons -->
+    <path d="M-40 250C130 129 226 240 365 163C521 76 601 197 940 53" stroke="#22D3EE" stroke-opacity="0.13" stroke-width="55" filter="url(#glow)" />
+    <path d="M-50 312C117 195 255 280 400 193C589 80 699 245 949 143" stroke="#F472B6" stroke-opacity="0.11" stroke-width="37" filter="url(#glow)" />
+
+    <!-- stars -->
+    <g fill="#E0F2FE">
+      <circle class="star-a" cx="77" cy="74" r="2" />
+      <circle class="star-b" cx="132" cy="137" r="1.6" />
+      <circle class="star-a" cx="210" cy="54" r="1.4" />
+      <circle class="star-b" cx="288" cy="112" r="2.1" />
+      <circle class="star-a" cx="371" cy="64" r="1.2" />
+      <circle class="star-b" cx="446" cy="124" r="1.8" />
+      <circle class="star-a" cx="544" cy="66" r="2.2" />
+      <circle class="star-b" cx="624" cy="142" r="1.3" />
+      <circle class="star-a" cx="817" cy="53" r="1.7" />
+      <circle class="star-b" cx="853" cy="151" r="2" />
+    </g>
+
+    <!-- moon -->
+    <g class="float">
+      <circle cx="741" cy="92" r="49" fill="#FBBF24" fill-opacity="0.18" filter="url(#glow)" />
+      <circle cx="741" cy="92" r="34" fill="url(#moon)" />
+      <circle cx="730" cy="80" r="5" fill="#EAB308" fill-opacity="0.23" />
+      <circle cx="752" cy="101" r="7" fill="#EAB308" fill-opacity="0.17" />
+    </g>
+
+    <!-- drifting clouds -->
+    <g class="cloud-a" opacity="0.24" fill="#C4B5FD">
+      <ellipse cx="0" cy="131" rx="55" ry="15" />
+      <ellipse cx="-17" cy="121" rx="29" ry="18" />
+      <ellipse cx="24" cy="119" rx="36" ry="22" />
+    </g>
+    <g class="cloud-b" opacity="0.17" fill="#BAE6FD">
+      <ellipse cx="0" cy="189" rx="70" ry="17" />
+      <ellipse cx="-28" cy="177" rx="33" ry="22" />
+      <ellipse cx="28" cy="174" rx="44" ry="27" />
+    </g>
+
+    <!-- distant city -->
+    <g fill="#090C27">
+      <path d="M0 380V314H48V347H91V291H132V330H171V268H221V337H266V304H309V350H357V277H400V325H448V289H493V344H539V257H582V318H624V282H672V344H718V296H765V325H808V272H856V310H900V480H0V380Z" />
+      <rect x="67" y="345" width="5" height="12" rx="1" fill="#22D3EE" class="light-a" />
+      <rect x="109" y="309" width="6" height="13" rx="1" fill="#FBBF24" class="light-b" />
+      <rect x="185" y="287" width="7" height="13" rx="1" fill="#F472B6" class="light-a" />
+      <rect x="280" y="319" width="6" height="12" rx="1" fill="#22D3EE" class="light-b" />
+      <rect x="374" y="295" width="6" height="13" rx="1" fill="#FBBF24" class="light-a" />
+      <rect x="464" y="307" width="7" height="13" rx="1" fill="#F472B6" class="light-b" />
+      <rect x="554" y="275" width="6" height="12" rx="1" fill="#22D3EE" class="light-a" />
+      <rect x="642" y="301" width="6" height="12" rx="1" fill="#FBBF24" class="light-b" />
+      <rect x="735" y="314" width="7" height="13" rx="1" fill="#F472B6" class="light-a" />
+      <rect x="825" y="290" width="6" height="12" rx="1" fill="#22D3EE" class="light-b" />
+    </g>
+
+    <!-- main glass card -->
+    <g filter="url(#shadow)">
+      <rect x="116" y="94" width="668" height="292" rx="30" fill="#11152F" fill-opacity="0.67" />
+      <rect x="117" y="95" width="666" height="290" rx="29" fill="url(#glass)" stroke="white" stroke-opacity="0.18" stroke-width="2" />
+    </g>
+
+    <g opacity="0.72">
+      <circle cx="150" cy="126" r="5" fill="#F472B6" />
+      <circle cx="168" cy="126" r="5" fill="#FBBF24" />
+      <circle cx="186" cy="126" r="5" fill="#22D3EE" />
+    </g>
+
+    <text x="450" y="166" fill="#BAE6FD" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="4" text-anchor="middle">KHOẢNG TRỜI RIÊNG · PERSONAL SPACE</text>
+    <text x="450" y="221" fill="white" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="750" text-anchor="middle">Huỳnh Xuân Nhã</text>
+    <text x="450" y="256" fill="#E9D5FF" font-family="Segoe UI, Arial, sans-serif" font-size="17" text-anchor="middle">Xin chào, cảm ơn bạn đã ghé qua.</text>
+    <text x="450" y="282" fill="#CFFAFE" font-family="Segoe UI, Arial, sans-serif" font-size="15" text-anchor="middle">Hello, thanks for stopping by.</text>
+
+    <!-- music pill -->
+    <g class="pulse">
+      <rect x="318" y="307" width="264" height="43" rx="21.5" fill="#090C27" fill-opacity="0.58" stroke="url(#music)" stroke-opacity="0.66" />
+    </g>
+    <g fill="url(#music)">
+      <rect class="bar-1" x="339" y="320" width="4" height="16" rx="2" />
+      <rect class="bar-2" x="347" y="316" width="4" height="20" rx="2" />
+      <rect class="bar-3" x="355" y="322" width="4" height="14" rx="2" />
+      <rect class="bar-4" x="363" y="318" width="4" height="18" rx="2" />
+      <rect class="bar-5" x="371" y="321" width="4" height="15" rx="2" />
+    </g>
+    <text x="395" y="333" fill="#F5F3FF" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600">now vibing · lofi night</text>
+
+    <!-- moving highlight over the card -->
+    <path class="shine" d="M176 102L245 102L467 379H398L176 102Z" fill="white" opacity="0" />
+
+    <text x="450" y="452" fill="#C4B5FD" fill-opacity="0.84" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="2" text-anchor="middle">XUANNHADEV.COM</text>
+
+    <rect x="1" y="1" width="898" height="478" rx="27" stroke="white" stroke-opacity="0.14" stroke-width="2" />
+  </g>
+</svg>
